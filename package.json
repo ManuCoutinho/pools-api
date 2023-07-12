@@ -9,7 +9,7 @@
   },
   "scripts": {
     "lint": "eslint --ext .ts src",
-    "start": "tsx watch src/server.ts "
+    "dev": "tsx watch src/server.ts "
   },
   "keywords": [
     "fastify",
