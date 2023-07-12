@@ -3,7 +3,7 @@ version: '3.9'
 services:
   postgres:
     image: postgres:latest
-    container_name: postgres
+    container_name: postgres-pool
     hostname: postgres
     restart: unless-stopped
     environment:
@@ -17,7 +17,7 @@ services:
   
   pgadmin:
     image: dpage/pgadmin4
-    container_name: pgadmin4
+    container_name: pgadmin4-pool
     depends_on:
       - postgres
     ports:
@@ -31,7 +31,7 @@ services:
   
   server:
     stdin_open: true
-    container_name: server
+    container_name: pool-api
     build:
       context: .
       dockerfile: Dockerfile
